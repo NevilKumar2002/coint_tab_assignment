@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
+import "../App.css"
 function PostPage() {
   const { userId } = useParams();
   const [name, setName] = useState('');
@@ -75,8 +75,8 @@ function PostPage() {
   };
 
   return (
-    <div>
-      <h1>Post Page</h1>
+    <div className='post-page-container'>
+      <h1 className='post-page-heading'>Post Page</h1>
       <p>User ID: {userId}</p>
       <table border="1">
         <thead>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PostPage from './PostPage';
 import {  useNavigate } from 'react-router-dom';
+import "../App.css"
 
 function FetchUsers() {
   const [users, setUsers] = useState([]);
@@ -45,35 +46,7 @@ function FetchUsers() {
       console.error('Error adding user:', error);
     }
   };
-  
-
-//   const addUser = async (user) => {
-//     try {
-//       const response = await fetch('http://localhost:3000/api/add-user', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(user),
-//       });
-
-//       const result = await response.json();
-//       console.log(result);
-
-//       if (result.openButton) {
-//         // Hide the "Add" button and show the "Open" button
-//         const addButton = document.querySelector(`#addButton_${result.user.id}`);
-//         const openButton = document.querySelector(`#openButton_${result.user.id}`);
-        
-//         addButton.style.display = 'none';
-//         openButton.style.display = 'block';
-//       }
-
-//     } catch (error) {
-//       console.error('Error adding user:', error);
-//     }
-//   };
-
+ 
   
   const openUser = (userId) => {
     // window.location.href = `http://localhost:3000/post/${userId}`;
@@ -83,9 +56,9 @@ function FetchUsers() {
   };
 
   return (
-    <div>
+    <div className='fetchUsers-container'>
       <h1>Cointab SE-ASSIGNMENT</h1>
-      <button onClick={fetchAllUsers}>All Users</button>
+      <button onClick={fetchAllUsers} className='add-user-btn'>All Users</button>
 
       {tableVisible && (
         <table border="1">
